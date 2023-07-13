@@ -66,6 +66,11 @@ public class Enemy_Spawner : MonoBehaviour
         {
             
         }
+        //게임이 시작을 안했거나 잠시 멈추었다면 정지
+        else if (stage_start == false)
+        {
+            
+        }
         //generate가 true이면 스폰, false면 true로 변경 후 다시 시간
         else if (generate == true)
         {

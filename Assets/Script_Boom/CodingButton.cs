@@ -36,7 +36,7 @@ public class CodingButton : MonoBehaviour
         codingBtn.SetActive(false);
         MainCamera.SetActive(false);                                    //메인 카메라
         Canvas.SetActive(false);                                        //캔버스
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     public void readyToReturnScene()        //청사진에서 돌아올 때 UI들 보이기
@@ -48,7 +48,7 @@ public class CodingButton : MonoBehaviour
         codingBtn.SetActive(true);
         MainCamera.SetActive(true);                                    //메인 카메라
         Canvas.SetActive(true);                                        //캔버스
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
     
     

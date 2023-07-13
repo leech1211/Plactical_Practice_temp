@@ -16,14 +16,14 @@ public class TimeScore : MonoBehaviour
 
     private float time;
     private int min;
-    private int sec;
+    private float sec;
 
     private void Start()
     {
         /*if(gameNetWorkManager == null)
             gameNetWorkManager = GameNetWorkManager.instance;*/
-        //코딩중에는 시간이 멈춘것으로 하겠다
-        timeUI.text = "Coding!";
+        
+        //timeUI.text = "Coding!";
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class TimeScore : MonoBehaviour
         /*if(gameNetWorkManager == null)
             return;
         time = gameNetWorkManager.time.Value;
-        time = Stage_System.instance.stage_time;
+        
         
         if (hide && gameObject.activeSelf && time <= 0)
         {
@@ -39,9 +39,9 @@ public class TimeScore : MonoBehaviour
             return;
         }*/
         
+        time = Stage_System.instance.stage_time;
         
-        
-        /*// 남은 시간이 0보다 작아질 때 혹은 버튼이 눌렸을 때
+        // 남은 시간이 0보다 작아질 때 혹은 버튼이 눌렸을 때
         if (time <= 0 || Stage_System.instance.Stage_Start == true)
         {
             timeUI.text = "Playing!";
@@ -56,24 +56,24 @@ public class TimeScore : MonoBehaviour
             min = (int)(time / 60);
             sec = (int)(time % 60);
 
-            if (min < 10)
+            // 전체 시간이 60초 보다 클 때
+            if (time >= 60f)
             {
-                timeUI.text = $"0{min}:";
-            }
-            else
-            {
-                timeUI.text = $"{min}:";
+                // 60으로 나눠서 생기는 몫을 분단위로 변경
+                min = (int)time / 60;
+                // 60으로 나눠서 생기는 나머지를 초단위로 설정
+                sec = time % 60;
+                // UI를 표현해준다
+                timeUI.text = min + ":" + (int)sec;
             }
 
-            if (sec < 10)
+            // 전체시간이 60초 미만일 때
+            if (time < 60f)
             {
-                timeUI.text += $"0{sec}";
+                // 분 단위는 필요없어지므로 초단위만 남도록 설정
+                timeUI.text = "0:" + (int)time;
             }
-            else
-            {
-                timeUI.text += $"{sec}";
-            }
-        }*/
+        }
 
         
     }

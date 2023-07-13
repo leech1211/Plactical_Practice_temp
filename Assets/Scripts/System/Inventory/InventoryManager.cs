@@ -343,8 +343,9 @@ public class InventoryManager : MonoBehaviour
     public void SaveAndExit()       //청사진에서 돌아오는 코드
     {
         CodingButton.instance.readyToReturnScene();     //돌아올 때 UI,시간 등 처리
-        ItemStorage.instance.ChangeField("Inventory");
-        InventoryField.instance.gameObject.SetActive(false);
+        ItemStorage.instance.ChangeField("Inventory");  //안전창치 -> 스킬수정에서 바로 청사진이 꺼지는 경우 다시 청사진으로 접근시 오류가 발생
+                                                        //어디에서든 스테이지로 나가기 전에 Inventory로 거친 뒤 나가기
+        InventoryField.instance.gameObject.SetActive(false);    //코딩내용들이 유지되지만 화면상으로는 보이지 않게
         SceneManager.UnloadSceneAsync(sceneName);       //더해진 씬(Inventory) 내리기
     }
 

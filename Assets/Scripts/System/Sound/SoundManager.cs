@@ -72,17 +72,17 @@ public class SoundManager : MonoBehaviour
     
     public void SFXPlayOneShot(string sfxName, AudioClip clip, float vol = 0.5f)
     {
-        GameObject go = new GameObject(sfxName + "Sound");
+        GameObject go = new GameObject(sfxName + "Sound");      //오브젝트의 이름
 
-        AudioSource audiosource = go.AddComponent<AudioSource>();
+        AudioSource audiosource = go.AddComponent<AudioSource>();   //사운드 오브젝트로
 
-        audiosource.volume = vol;
+        audiosource.volume = vol;                                   //볼륨은 0.5f
         
-        audiosource.PlayOneShot(clip);
+        audiosource.PlayOneShot(clip);                              //한번만 재생?
         
-        Destroy(go, clip.length);
+        Destroy(go, clip.length);                                   //해당 오브젝트 삭제
     }
-
+    
 
 
     public void SFXPlayOneShotBS(string sfxName, AudioClip clip, float vol = 0.5f)

@@ -21,7 +21,7 @@ public class Stage_System : MonoBehaviour
     public float Max_Spawn_Timing;    //NPC 스폰 최대주기
 
     public int peiz2;         //2페이즈 시작 지점
-    public int peiz3;         //2페이즈 시작 지점
+    public int peiz3;         //3페이즈 시작 지점
 
     public int money;         //유저의 돈
     public float stage_time;  //스테이지 시작까지 시간
@@ -40,8 +40,7 @@ public class Stage_System : MonoBehaviour
     public bool Stage_Start;                          //게임 시작 전 테스트 이 후 게임을 시작
     public bool Stage_peiz2, Stage_peiz3;             //해당 스테이지의 각 peiz여부  
 
-    public bool Stage_Fail;                     //스테이지를 실패 했는가 -> 애니메이션의 중복을 방
-
+    public bool Stage_Fail;                     //스테이지를 실패 했는가 -> 애니메이션의 중복을 방지
 
     //Build Manager
 
@@ -82,8 +81,8 @@ public class Stage_System : MonoBehaviour
         Max_Spawn_Timing = 10;      //초기에 최대 스폰 주기는 10초
         
 
-        peiz3 = MaxNumNpc / 3 + MaxNumNpc / 3;
-        peiz2 = MaxNumNpc / 3;
+        peiz2 = MaxNumNpc / 3 + MaxNumNpc / 3;              //20
+        peiz3 = MaxNumNpc / 3;                              //10
 
 
         money = 100;
@@ -123,7 +122,7 @@ public class Stage_System : MonoBehaviour
         if (Stage_health <= 0)
             Stage_Fail = true;              //남은 체력이 0이면 스테이지 실패
 
-        if (SpawnedNPC >= peiz3 && Stage_peiz3 == false)
+        if (PrintNum <= peiz3 && Stage_peiz3 == false && Stage_Start == true)
         {
             //Debug.Log("페이즈 3");
             //스폰속도 2~4
@@ -134,9 +133,15 @@ public class Stage_System : MonoBehaviour
             Max_Spawn_Timing = 4;
             Enemy_Poison_Bomb_health += 1;
             Enemy_Poison_Bomb_damage += 1;
-            BoomHealth += 1;            
+            BoomHealth += 1;        
+            
+            //스포너의 스폰을 잠시 멈추고 다시 2분 대기 
+            Stage_Start = false;
+            stage_time = 120;
+            
+            
         }
-        else if (SpawnedNPC >= peiz2 && Stage_peiz2 == false)
+        else if (PrintNum <= peiz2 && Stage_peiz2 == false && Stage_Start == true)
         {
             //Debug.Log("페이즈 2");
             //스폰속도 4~8
@@ -146,7 +151,14 @@ public class Stage_System : MonoBehaviour
             Min_Spawn_Timing = 4;
             Max_Spawn_Timing = 8;
             Enemy_Poison_Bomb_speed += 1;
-            BoomHealth += 2;            
+            BoomHealth += 2;
+
+            //스포너의 스폰을 잠시 멈추고 다시 2분 대기 
+            Stage_Start = false;
+            stage_time = 120;
+                
+                
+            ItemManager.instance.AddItem(NodeType.INT_2);
         }
 
         /*if (Input.GetMouseButton(0))

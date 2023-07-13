@@ -14,7 +14,7 @@ public class Save : MonoBehaviour
 
     private void Start()
     {
-        button.onClick.AddListener(OnClick);
+        button.onClick.AddListener(OnClick);        //onclick 리스너 추가
     }
 
     public void OnClick()
@@ -37,8 +37,4 @@ public class Save : MonoBehaviour
 
     }
     
-    public void returnScene()       //기존 stage로 이동
-    {
-        SceneManager.LoadScene("Boom_Spawn_Scene");    //씬이동
-    }
 }
