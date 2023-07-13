@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1920406092a824085ea6f7b586f06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 0
   time: 0
+  PrintText: {fileID: 0}
 --- !u!114 &86614540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10822,6 +10822,7 @@ MonoBehaviour:
   peiz2: 0
   peiz3: 0
   money: 0
+  stage_time: 0
   BoomSpeed: 0
   BoomHealth: 0
   BoomDamage: 0
@@ -11498,6 +11499,8 @@ MonoBehaviour:
   userHealth: {fileID: 372920778}
   startBtn: {fileID: 1778096783}
   codingBtn: {fileID: 5155118}
+  MainCamera: {fileID: 106369725}
+  Canvas: {fileID: 1003776658}
 --- !u!1001 &2131267137
 PrefabInstance:
   m_ObjectHideFlags: 0

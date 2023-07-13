@@ -340,32 +340,12 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void SaveAndExit()
+    public void SaveAndExit()       //청사진에서 돌아오는 코드
     {
-        if (InventoryField.instance.currentFieldName.Contains("SandBox"))
-        {
-            ItemStorage.instance.ChangeField("Inventory");
-            ItemManager.instance.ResetItem();
-            Destroy(InventoryField.instance.gameObject);
-            Destroy(ItemStorage.instance.gameObject);
-            SceneManager.UnloadSceneAsync("Inventory");
-            GameObject.Find("StartCamera").GetComponent<AudioListener>().enabled = true;
-            MainMenuController.instance.ResetUI();
-            return;
-        }
-
+        CodingButton.instance.readyToReturnScene();     //돌아올 때 UI,시간 등 처리
         ItemStorage.instance.ChangeField("Inventory");
-
-        GameObject playerCamera = GameObject.Find("PlayerCameraContaner(Clone)");
-        GameObject playerController = GameObject.Find("OwnerPlayer");
         InventoryField.instance.gameObject.SetActive(false);
-
-        if (playerCamera != null)
-        {
-            playerCamera.GetComponentInChildren<Camera>().enabled = true;
-            playerCamera.GetComponentInChildren<AudioListener>().enabled = true;
-        }
-        SceneManager.UnloadSceneAsync(sceneName);
+        SceneManager.UnloadSceneAsync(sceneName);       //더해진 씬(Inventory) 내리기
     }
 
     public void Reset()
