@@ -43,7 +43,7 @@ public class InventoryField : MonoBehaviour
         Transform UI = GameObject.Find("InventoryUI").transform;
         
         ItemStorage.instance.ChangeField("SandBox");
-        UI.Find("Time").gameObject.SetActive(false);
+        UI.Find("Coding").gameObject.SetActive(false);
         UI.GetChild(0).gameObject.SetActive(true);
         UI.GetChild(1).gameObject.SetActive(false);
         UI.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(170f, 100f);

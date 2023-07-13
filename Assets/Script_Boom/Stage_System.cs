@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stage_System : MonoBehaviour
 {
+    
     /*SpawnedNPC가 0부터 시작해 스폰할때 마다 1씩 증가
       MaxNumNpc까지 증가 후 MaxNumNpc와 같아진다면 더이상 스폰되지 않음
       PrintNum는 초기 값이 MaxNumNpc 동일하며 NPC가 1개씩 죽을 때 마다 1 감소*/
@@ -23,6 +24,7 @@ public class Stage_System : MonoBehaviour
     public int peiz3;         //2페이즈 시작 지점
 
     public int money;         //유저의 돈
+    public float stage_time;  //스테이지 시작까지 시간
 
 
     public float BoomSpeed;                     //Boom오브젝트의 속력
@@ -54,6 +56,7 @@ public class Stage_System : MonoBehaviour
             return;
         }
         instance = this;
+        stage_time = 120;       //stage_time 2분
     }
 
     public GameObject standardUserNPC;
@@ -108,6 +111,8 @@ public class Stage_System : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        stage_time -= Time.deltaTime;       //시간은 1초씩 줄어든다
+        
         /*페이즈는 총 3단계가 있음
           2페이즈는 총 NPC 개수의 1/3 이 spawn 되었을 때
           3페이즈는 총 NPC 개수의 2/3 이 spawn 되었을 때*/
@@ -144,14 +149,14 @@ public class Stage_System : MonoBehaviour
             BoomHealth += 2;            
         }
 
-        if (Input.GetMouseButton(0))
+        /*if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit))
             {
                 Debug.Log(hit.transform.gameObject);
             }
-        }
+        }*/
     }
 
 }

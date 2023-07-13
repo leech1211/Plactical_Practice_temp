@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -163,7 +163,7 @@ RectTransform:
   - {fileID: 1670408230}
   - {fileID: 1735992753}
   m_Father: {fileID: 1003776662}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3421,7 +3421,7 @@ RectTransform:
   - {fileID: 262443330}
   - {fileID: 383253346}
   m_Father: {fileID: 1003776662}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6030,11 +6030,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 605236864}
-  - {fileID: 1788920624}
-  - {fileID: 2084590338}
   - {fileID: 486953167}
   - {fileID: 52898438}
   - {fileID: 1028047751}
+  - {fileID: 1788920624}
+  - {fileID: 2084590338}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6153,7 +6153,7 @@ RectTransform:
   - {fileID: 1771526460}
   - {fileID: 826573861}
   m_Father: {fileID: 1003776662}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7619,7 +7619,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 99550921}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.39320567
+  m_Size: 0.39320564
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10018,7 +10018,7 @@ RectTransform:
   - {fileID: 937739838}
   - {fileID: 1786247094}
   m_Father: {fileID: 1003776662}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10981,7 +10981,7 @@ RectTransform:
   - {fileID: 262668441}
   - {fileID: 448158205}
   m_Father: {fileID: 1003776662}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11493,6 +11493,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6b75db9356ef468f4de912ce45ff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftEmemy: {fileID: 594250025}
+  userMoney: {fileID: 2050672790}
+  userHealth: {fileID: 372920778}
+  startBtn: {fileID: 1778096783}
+  codingBtn: {fileID: 5155118}
 --- !u!1001 &2131267137
 PrefabInstance:
   m_ObjectHideFlags: 0

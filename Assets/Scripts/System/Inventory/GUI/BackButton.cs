@@ -30,4 +30,5 @@ public class BackButton : MonoBehaviour, IPointerClickHandler
         FieldName = fieldName;
         IsPuzzleField = isPuzzleField;
     }
+    
 }

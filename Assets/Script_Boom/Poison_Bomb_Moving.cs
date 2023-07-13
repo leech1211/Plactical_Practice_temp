@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Poison_Bomb_Moving : MonoBehaviour
 {
-    public float speed;                     //¿ÀºêÁ§Æ®ÀÇ ¿òÁ÷ÀÓ ¼Ó·Â
-    public int health;                      //¿ÀºêÁ§Æ®ÀÇ Ã¼·Â
-    public int damage;                      //¿ÀºêÁ§Æ®ÀÇ °ø°İ·Â
+    public float speed;                     //ì˜¤ë¸Œì íŠ¸ì˜ ì›€ì§ì„ ì†ë ¥
+    public int health;                      //ì˜¤ë¸Œì íŠ¸ì˜ ì²´ë ¥
+    public int damage;                      //ì˜¤ë¸Œì íŠ¸ì˜ ê³µê²©ë ¥
 
-    bool dieControl;                        //ÇÇ°¡ ´Ù ´â¾ÒÀ»¶§ Update Á¦¾î 
-    bool hitHealtBox;                       //update ÇÔ¼ö Á¦¾î
+    bool dieControl;                        //í”¼ê°€ ë‹¤ ë‹³ì•˜ì„ë•Œ Update ì œì–´ 
+    bool hitHealtBox;                       //update í•¨ìˆ˜ ì œì–´
     bool rewardControl;             
 
-    Rigidbody rigid;                        //¿ÀºêÁ§Æ®ÀÇ ÇöÀç À§Ä¡
-    BoxCollider box;                        //¿ÀºêÁ§Æ®ÀÇ Box Colider
+    Rigidbody rigid;                        //ì˜¤ë¸Œì íŠ¸ì˜ í˜„ì¬ ìœ„ì¹˜
+    BoxCollider box;                        //ì˜¤ë¸Œì íŠ¸ì˜ Box Colider
     Vector3 moveVec;
     Animator Anim;
 
@@ -37,54 +37,54 @@ public class Poison_Bomb_Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hitHealtBox == false && health >= 0)            //health Box ¿¡ ºÎµúÈ÷Áö ¾Ê¾Ò´Ù¸é
+        if(hitHealtBox == false && health >= 0)            //health Box ì— ë¶€ë”ªíˆì§€ ì•Šì•˜ë‹¤ë©´
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f) && hit.collider.gameObject.layer == 17)
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 2f) && hit.collider.gameObject.layer == 27)
             {
-                // ¾Õ¿¡ °¨ÁöµÈ ¿ÀºêÁ§Æ®ÀÇ ·¹ÀÌ¾î°¡ 17ÀÎ °æ¿ì
+                // ì•ì— ê°ì§€ëœ ì˜¤ë¸Œì íŠ¸ì˜ ë ˆì´ì–´ê°€ 17ì¸ ê²½ìš°
                 speed = 0;
-                Anim.SetBool("walk", false);            //°È´Â°Å ¸ØÃß°í
-                Anim.SetBool("attack", true);           //°ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç
+                Anim.SetBool("walk", false);            //ê±·ëŠ”ê±° ë©ˆì¶”ê³ 
+                Anim.SetBool("attack", true);           //ê³µê²© ì• ë‹ˆë©”ì´ì…˜
             }
             else
             {
-                if (dieControl == false)      //Á×Àº °æ¿ì¿¡´Â ¿òÁ÷ÀÌÁö ¾Ê´Â´Ù 
+                if (dieControl == false)      //ì£½ì€ ê²½ìš°ì—ëŠ” ì›€ì§ì´ì§€ ì•ŠëŠ”ë‹¤ 
                 {
                     speed = 0;
                 }
-                else                        //Á×Áö ¾ÊÀº°æ¿ì¿¡¸¸ ¿òÁ÷ÀÎ´Ù
+                else                        //ì£½ì§€ ì•Šì€ê²½ìš°ì—ë§Œ ì›€ì§ì¸ë‹¤
                 {
                     speed = GameObject.Find("Stage_System").GetComponent<Stage_System>().Enemy_Poison_Bomb_speed;
                 }
-                // ¾Õ¿¡ ¿ÀºêÁ§Æ®°¡ °¨ÁöµÇÁö ¾ÊÀ½ -> °è¼Ó ¾ÕÀ¸·Î ÀÌµ¿
-                Anim.SetBool("attack", false);           //°ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç ±×¸¸ÇÏ±â
+                // ì•ì— ì˜¤ë¸Œì íŠ¸ê°€ ê°ì§€ë˜ì§€ ì•ŠìŒ -> ê³„ì† ì•ìœ¼ë¡œ ì´ë™
+                Anim.SetBool("attack", false);           //ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ê·¸ë§Œí•˜ê¸°
                 moveVec = new Vector3(speed, 0, 0).normalized;
-                //normalizeÀÇ °æ¿ì´Â ¾ÕµÚÁÂ¿ìÀÇ speed°¡ 1ÀÏ¶§ ´ë°¢¼±Àº ·çÆ®2 °¡ µÇ´Â °æ¿ì°¡ Á¸ÀçÇØ¼­ normalized¸¦ ºÙ¿© ¹æÇâ°ªÀ» 1·Î º¸Á¤
+                //normalizeì˜ ê²½ìš°ëŠ” ì•ë’¤ì¢Œìš°ì˜ speedê°€ 1ì¼ë•Œ ëŒ€ê°ì„ ì€ ë£¨íŠ¸2 ê°€ ë˜ëŠ” ê²½ìš°ê°€ ì¡´ì¬í•´ì„œ normalizedë¥¼ ë¶™ì—¬ ë°©í–¥ê°’ì„ 1ë¡œ ë³´ì •
 
                 transform.position += moveVec * speed * Time.deltaTime;
-                //Time.deltaTimeÀ» ²À ºÙ¿©ÁÖÀÚ
+                //Time.deltaTimeì„ ê¼­ ë¶™ì—¬ì£¼ì
 
                 Anim.SetBool("walk", moveVec != Vector3.zero);
-                //°ÉÀ»¶§´Â ¾Ö´Ï¸ŞÀÌ¼Ç
+                //ê±¸ì„ë•ŒëŠ” ì• ë‹ˆë©”ì´ì…˜
 
                 transform.LookAt(transform.position + moveVec);
-                //¿òÁ÷ÀÌ´Â ¹æÇâÀ¸·Î ¹Ù¶óº¸±â            
+                //ì›€ì§ì´ëŠ” ë°©í–¥ìœ¼ë¡œ ë°”ë¼ë³´ê¸°            
             }
         }
-        else if(this.health <= 0)     //ÇÇ°¡ ´Ù ´â¸é
+        else if(this.health <= 0)     //í”¼ê°€ ë‹¤ ë‹³ë©´
         {
             speed = 0;                          //speed = 0
-            Anim.SetBool("die", true);          //Á×Àº ¾Ö´Ï¸ŞÀÌ¼Ç
-            rigid.constraints &= ~RigidbodyConstraints.FreezePosition;      // RigidBody-Constraints-Freeze Position false·Î -> °¡¶ó¾ÉÀ½
-                                                                            //Äİ¶óÀÌÅÍÀÇ ¼¾ÅÍ ³·Ãß±â
+            Anim.SetBool("die", true);          //ì£½ì€ ì• ë‹ˆë©”ì´ì…˜
+            rigid.constraints &= ~RigidbodyConstraints.FreezePosition;      // RigidBody-Constraints-Freeze Position falseë¡œ -> ê°€ë¼ì•‰ìŒ
+                                                                            //ì½œë¼ì´í„°ì˜ ì„¼í„° ë‚®ì¶”ê¸°
             Vector3 center = box.center;
             center.y -= 0.4f;
             box.center = center;
 
-            if(rewardControl == false)              //µ·À» ¹«ÁøÀå ¸¹ÀÌ ¹Ş´Â ¹ö±× ¹æÁö
+            if(rewardControl == false)              //ëˆì„ ë¬´ì§„ì¥ ë§ì´ ë°›ëŠ” ë²„ê·¸ ë°©ì§€
             {
-                //Boom ÀÇ °¡°İÀÇ µÎ¹è¸¦ º¸»ó
+                //Boom ì˜ ê°€ê²©ì˜ ë‘ë°°ë¥¼ ë³´ìƒ
                 GameObject.Find("Stage_System").GetComponent<Stage_System>().money += (GameObject.Find("Stage_System").GetComponent<Stage_System>().BoomPrice * 2);
                 rewardControl = true;
                 Invoke("remove", 2);
@@ -96,8 +96,8 @@ public class Poison_Bomb_Moving : MonoBehaviour
     }
     void remove()
     {
-        GameObject.Find("Stage_System").GetComponent<Stage_System>().PrintNum--;        //Ãâ·ÂÇÏ´Â NPC¼ö °¨¼Ò
-        Destroy(gameObject);            //»èÁ¦
+        GameObject.Find("Stage_System").GetComponent<Stage_System>().PrintNum--;        //ì¶œë ¥í•˜ëŠ” NPCìˆ˜ ê°ì†Œ
+        Destroy(gameObject);            //ì‚­ì œ
     }
     void OnDrawGizmos()
     {
@@ -105,26 +105,26 @@ public class Poison_Bomb_Moving : MonoBehaviour
         Gizmos.DrawRay(transform.position , transform.forward * 2f);
     }
 
-    //BoomÀ» ¸¸³µÀ» ¶§ °ø°İ
-    //¾Ö´Ï¸ŞÀÌ¼Ç ÀÌº¥Æ®¸¦ ÅëÇØ È£Ãâ
+    //Boomì„ ë§Œë‚¬ì„ ë•Œ ê³µê²©
+    //ì• ë‹ˆë©”ì´ì…˜ ì´ë²¤íŠ¸ë¥¼ í†µí•´ í˜¸ì¶œ
     void Attack()
     {
-        float raycastDistance = 2f; // ·¹ÀÌÄ³½ºÆ®ÀÇ °Å¸®
+        float raycastDistance = 2f; // ë ˆì´ìºìŠ¤íŠ¸ì˜ ê±°ë¦¬
 
         RaycastHit[] hits = Physics.RaycastAll(transform.position, transform.forward, raycastDistance);
-        // ¿ÀºêÁ§Æ®¿¡¼­ Âß ³ª¿À´Â Á÷¼± ·¹ÀÌÄ³½ºÆ® ¼öÇà
+        // ì˜¤ë¸Œì íŠ¸ì—ì„œ ì­‰ ë‚˜ì˜¤ëŠ” ì§ì„  ë ˆì´ìºìŠ¤íŠ¸ ìˆ˜í–‰
 
         for (int i = 0; i < hits.Length; i++)
         {
             RaycastHit hit = hits[i];
-            if (hit.collider.gameObject.layer == 27)                    //BoomÀ» ¸¸³­°æ¿ì
+            if (hit.collider.gameObject.layer == 27)                    //Boomì„ ë§Œë‚œê²½ìš°
             {
                 GameObject hitObject = hit.collider.gameObject;
                 hitObject.GetComponent<UserNPC_Boom>().health = hitObject.GetComponent<UserNPC_Boom>().health - damage;
-                // µ¥¹ÌÁö Àû¿ë
-                AttackSFX.Play(); //È¿°úÀ½
+                // ë°ë¯¸ì§€ ì ìš©
+                AttackSFX.Play(); //íš¨ê³¼ìŒ
             }
-            if (health <= 0)        //Á×¾î¾ß ÇÏ´Âµ¥ ¾Õ¿¡ °è¼Ó BoomÀÌ ÀÖ¾î¼­ ¹İº¹¹®À» °è¼Ó ¹İº¹ÇÔ?
+            if (health <= 0)        //ì£½ì–´ì•¼ í•˜ëŠ”ë° ì•ì— ê³„ì† Boomì´ ìˆì–´ì„œ ë°˜ë³µë¬¸ì„ ê³„ì† ë°˜ë³µí•¨?
                 break;
         }
     }
@@ -132,13 +132,13 @@ public class Poison_Bomb_Moving : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == 28)        //healthNode ¿Í Ãæµ¹ÇÒ °æ¿ì
+        if (collision.gameObject.layer == 28)        //healthNode ì™€ ì¶©ëŒí•  ê²½ìš°
         {
-            hitHealtBox = true;                      //update ¸ØÃß±â
-            Anim.SetBool("walk", false);                //°È´Â°Å ¸ØÃß°í
-            Anim.SetBool("Explode", true);              //Á×´Â ¾Ö´Ï¸ŞÀÌ¼Ç
-            GameObject.Find("Stage_System").GetComponent<Stage_System>().Stage_health -= damage;        //½ºÅ×ÀÌÁöÀÇ »ı¸í·ÂÀÌ ±ïÀÓ
-            //Debug.Log("½ºÅ×ÀÌÁö Ã¼·Â" + GameObject.Find("Stage_System").GetComponent<Stage_System>().Stage_health);
+            hitHealtBox = true;                      //update ë©ˆì¶”ê¸°
+            Anim.SetBool("walk", false);                //ê±·ëŠ”ê±° ë©ˆì¶”ê³ 
+            Anim.SetBool("Explode", true);              //ì£½ëŠ” ì• ë‹ˆë©”ì´ì…˜
+            GameObject.Find("Stage_System").GetComponent<Stage_System>().Stage_health -= damage;        //ìŠ¤í…Œì´ì§€ì˜ ìƒëª…ë ¥ì´ ê¹ì„
+            //Debug.Log("ìŠ¤í…Œì´ì§€ ì²´ë ¥" + GameObject.Find("Stage_System").GetComponent<Stage_System>().Stage_health);
             CrushHealthBoxSFX.Play();
             speed = 0;
             Invoke("remove", 1);
