@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 1817094033014473626}
   - component: {fileID: 1817094033014473627}
   - component: {fileID: 7791338201316028628}
+  - component: {fileID: 997662549656865012}
   m_Layer: 5
   m_Name: POISON_BOMB_PROPERTY
   m_TagString: Node
@@ -404,6 +405,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!114 &997662549656865012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817094033014473630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7349c64e22db451284e2e41d6780e462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NODE_TYPE: POISON_BOMB_PROPERTY
+  inputButton: []
+  inputFlow: []
+  outputFlow: []
+  variableName: 
+  INPUT_COUNT: 3
+  OUTPUT_COUNT: 0
+  INPUT_FLOW_COUNT: 0
+  OUTPUT_FLOW_COUNT: 0
+  isStatic: 0
+  Icon: {fileID: 0}
+  PrefebPath: 
+  Title: 
+  Information: "POISON_BOMB\uC758 \uB2A5\uB825\uCE58 \uC870\uC815"
 --- !u!1 &1817094033469416487
 GameObject:
   m_ObjectHideFlags: 0

@@ -206,5 +206,7 @@ public enum NodeType
     //Boom 사이드프로젝트
     BOOM_NODE,
     POISON_BOMB_NODE,
+    BOOM_PROPERTY,
+    POISON_BOMB_PROPERTY,
     
 }
