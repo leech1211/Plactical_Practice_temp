@@ -23,14 +23,21 @@ public class Draggable : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoin
 
     void OnEnable()
     {
-        if(InventoryManager.instance != null)
-            Initialize();
+        StartCoroutine(WaitInitialize());
+    }
+
+    private IEnumerator WaitInitialize()
+    {
+        while (InventoryManager.instance == null)
+            yield return null;
+        Initialize();
     }
 
     public void Initialize()
     {
-        startClickClip = Resources.Load("Sound/nodeConnectSound/drag_[cut_0sec]") as AudioClip;
-        startEndClip = Resources.Load("Sound/nodeConnectSound/dragEnd_[cut_0sec]") as AudioClip;
+        startClickClip = Resources.Load("Sound/nodeConnectSound/drag_[cut_0sec]") as AudioClip;         //사운드파일 가져오기
+        startEndClip = Resources.Load("Sound/nodeConnectSound/dragEnd_[cut_0sec]") as AudioClip;        //사운드 파일 가져오기
+       
         cam = GameObject.Find("InventoryCamera").GetComponent<Camera>();
         GameObject property = GameObject.Find("InventoryUI");
         if (property != null)
@@ -43,10 +50,12 @@ public class Draggable : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoin
         isClick = false;
     }
     
-    public virtual void OnPointerDown(PointerEventData eventData)
+    //대충 클릭했을 때 위치를 변경?
+    public virtual void OnPointerDown(PointerEventData eventData)                           //클릭 내려갈때 호출
     {
-        SoundManager.instance.SFXPlayOneShot("startClick", startClickClip);
-        if (Input.GetKey(KeyCode.Mouse0) && isActive)
+        //Debug.Log("start사운드의 길이 : " + startClickClip.length);
+        SoundManager.instance.SFXPlayOneShot("startClick", startClickClip);         //startClickClip을 한번 재생
+        if (Input.GetKey(KeyCode.Mouse0) && isActive)                                      //좌클릭 했을 시
         {
             isClick = true;
             transform.SetParent(propertyTr);
@@ -99,6 +108,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoin
     public virtual void OnPointerUp(PointerEventData eventData)
     {
         isClick = false;
+        //Debug.Log("end사운드의 길이 : " + startClickClip.length);
         SoundManager.instance.SFXPlayOneShot("endClick", startEndClip);
         if (isActive)
         {

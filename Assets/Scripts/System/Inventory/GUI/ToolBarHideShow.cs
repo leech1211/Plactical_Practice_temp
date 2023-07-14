@@ -65,7 +65,7 @@ public class ToolBarHideShow : MonoBehaviour, IPointerDownHandler
 
         toolBar.anchoredPosition = openedPos;
     }
-    
+
     IEnumerator Close()
     {
         isOpened = false;

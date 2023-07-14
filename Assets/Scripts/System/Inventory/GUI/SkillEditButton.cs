@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SkillEditButton : MonoBehaviour, IPointerClickHandler
+public class SkillEditButton : MonoBehaviour, IPointerClickHandler      //노드의 스킬수정 버튼에 들어가는 스크립트
 {
     [SerializeField] private string FieldName;
     [SerializeField] private List<GameObject> Preset;
