@@ -13156,7 +13156,7 @@ PrefabInstance:
     - target: {fileID: 1323944857306976940, guid: ca7357b7749365142b5f498b778d812d,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1323944857306976940, guid: ca7357b7749365142b5f498b778d812d,
         type: 3}
@@ -13317,10 +13317,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1524410078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7349c64e22db451284e2e41d6780e462, type: 3}
+  m_Script: {fileID: 11500000, guid: e2ea3464d66c405899c35f6b075712ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NODE_TYPE: NULL
+  NODE_TYPE: POISON_BOMB_NODE
   inputButton: []
   inputFlow: []
   outputFlow: []
@@ -13331,9 +13331,10 @@ MonoBehaviour:
   OUTPUT_FLOW_COUNT: 0
   isStatic: 0
   Icon: {fileID: 0}
-  PrefebPath: NULL
-  Title: 
+  PrefebPath: Node/BOOM/POISON_BOMB_NODE
+  Title: Poison_Bomb
   Information: 
+  propertyObject: {fileID: 0}
 --- !u!1 &1541292612
 GameObject:
   m_ObjectHideFlags: 0
@@ -17818,7 +17819,7 @@ PrefabInstance:
     - target: {fileID: 1323944857306976940, guid: b5ca27799dda13b4a9e76c3160278ec5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1323944857306976940, guid: b5ca27799dda13b4a9e76c3160278ec5,
         type: 3}
@@ -17979,10 +17980,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1964246529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7349c64e22db451284e2e41d6780e462, type: 3}
+  m_Script: {fileID: 11500000, guid: e2ea3464d66c405899c35f6b075712ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NODE_TYPE: NULL
+  NODE_TYPE: BOOM_NODE
   inputButton: []
   inputFlow: []
   outputFlow: []
@@ -17993,9 +17994,10 @@ MonoBehaviour:
   OUTPUT_FLOW_COUNT: 0
   isStatic: 0
   Icon: {fileID: 0}
-  PrefebPath: NULL
-  Title: 
+  PrefebPath: Node/BOOM/BOOM_NODE
+  Title: Boom
   Information: 
+  propertyObject: {fileID: 0}
 --- !u!1 &1971117126
 GameObject:
   m_ObjectHideFlags: 0

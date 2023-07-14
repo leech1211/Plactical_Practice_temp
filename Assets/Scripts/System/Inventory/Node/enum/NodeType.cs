@@ -202,4 +202,9 @@ public enum NodeType
     WEEK5_2_ROTATIONLEFT,
     WEEK5_2_ROTATIONRIGHT,
     WEEK5_2_FUNCTION,
+    
+    //Boom 사이드프로젝트
+    BOOM_NODE,
+    POISON_BOMB_NODE,
+    
 }
