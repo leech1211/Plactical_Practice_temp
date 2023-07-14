@@ -72,7 +72,17 @@ public class Stage_System : MonoBehaviour
     {
         Stage_health = 10;      //해당 스테이지 체력
 
-        //Debug.Log("페이즈 1");
+        //("페이즈 1");
+        /*
+         * BoomSpeed = 5
+         * Boom체력 8
+         * Boom 공격력 10
+         * Boom 폭발시간 3
+         *
+         * Poison Bomb speed = 10
+         * Poison Bomb 체력 5
+         * Poison Bomb 공격력 1
+         */
         MaxNumNpc = 30;         //해당 스테이지 NPC
         SpawnedNPC = 0;         //초기 값 세팅
         PrintNum = MaxNumNpc;   //초기 값 세팅
@@ -86,6 +96,12 @@ public class Stage_System : MonoBehaviour
 
 
         money = 100;
+        
+        
+        // 1,2,3 각각 2개씩, 더하기 2개
+        StartCoroutine(StartItemToInventory());
+       
+        
 
         BoomSpeed = 5;
         BoomHealth = 8;
@@ -125,9 +141,18 @@ public class Stage_System : MonoBehaviour
         if (PrintNum <= peiz3 && Stage_peiz3 == false && Stage_Start == true)
         {
             //Debug.Log("페이즈 3");
+            /*
+         * BoomSpeed = 5
+         * Boom체력 9
+         * Boom 공격력 10
+         * Boom 폭발시간 3
+         *
+         * Poison Bomb speed = 11
+         * Poison Bomb 체력 8
+         * Poison Bomb 공격력 2
+         */
             //스폰속도 2~4
-            //적 damage, health +1
-            //Boom 체력 +1
+
             Stage_peiz3 = true;
             Min_Spawn_Timing = 2;
             Max_Spawn_Timing = 4;
@@ -144,9 +169,17 @@ public class Stage_System : MonoBehaviour
         else if (PrintNum <= peiz2 && Stage_peiz2 == false && Stage_Start == true)
         {
             //Debug.Log("페이즈 2");
+            /*
+         * BoomSpeed = 5
+         * Boom체력 8
+         * Boom 공격력 10
+         * Boom 폭발시간 3
+         *
+         * Poison Bomb speed = 11
+         * Poison Bomb 체력 7
+         * Poison Bomb 공격력 1
+         */
             //스폰속도 4~8
-            //적 speed+1
-            //Boom 체력 +2
             Stage_peiz2 = true;
             Min_Spawn_Timing = 4;
             Max_Spawn_Timing = 8;
@@ -157,8 +190,8 @@ public class Stage_System : MonoBehaviour
             Stage_Start = false;
             stage_time = 120;
                 
-                
             ItemManager.instance.AddItem(NodeType.INT_2);
+            
         }
 
         /*if (Input.GetMouseButton(0))
@@ -169,6 +202,23 @@ public class Stage_System : MonoBehaviour
                 Debug.Log(hit.transform.gameObject);
             }
         }*/
+    }
+
+    private IEnumerator StartItemToInventory()
+    {
+        //ItemManager.instance의 start()를 통해 items가 생성될때 까지 대기 후 아이템 소매넣기
+        while (ItemManager.instance.getItems() == null)
+        {
+            yield return null;
+        }
+        ItemManager.instance.AddItem(NodeType.INT_1);
+        ItemManager.instance.AddItem(NodeType.INT_1);
+        ItemManager.instance.AddItem(NodeType.INT_2);
+        ItemManager.instance.AddItem(NodeType.INT_2);
+        ItemManager.instance.AddItem(NodeType.INT_3);
+        ItemManager.instance.AddItem(NodeType.INT_3);
+        ItemManager.instance.AddItem(NodeType.OPERATOR_PLUS_INT);
+        ItemManager.instance.AddItem(NodeType.OPERATOR_PLUS_INT);
     }
 
 }

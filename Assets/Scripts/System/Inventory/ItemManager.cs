@@ -24,6 +24,11 @@ public class ItemManager : MonoBehaviour
     private Dictionary<NodeType, int> presetItems;
     public List<NodeType> allowedInventoryItems;
 
+    public Dictionary<NodeType, int> getItems()      //items access 함수
+    {
+        return this.items;
+    }
+
     private void Start()
     {
         items = new Dictionary<NodeType, int>();
