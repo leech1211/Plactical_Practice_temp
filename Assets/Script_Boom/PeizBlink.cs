@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PeizBlink : MonoBehaviour
 {
-    private bool stage_start;
+    public bool stage_start;
     private float time;
     private float size;
     private float upSizeTime;
@@ -13,19 +13,17 @@ public class PeizBlink : MonoBehaviour
     void Start()
     {
         stage_start = GameObject.Find("Stage_System").GetComponent<Stage_System>().Stage_Start;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         stage_start = GameObject.Find("Stage_System").GetComponent<Stage_System>().Stage_Start;
-        
-        if (stage_start)       // 타이머가 돌아가고 있을 때는 비활성화
+        if (stage_start == true)       // 게임이 진행되고 있다면 보이도록
         {
             this.gameObject.SetActive(false);
         }
-        else                   // 타이머가 돌아가지 않을 때는 활성화하여 보이게 함
+        else                   // 게임이 진행되고 있지 않다면 보이지 않도록
         {
             this.gameObject.SetActive(true);
         }

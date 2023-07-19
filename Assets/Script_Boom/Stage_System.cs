@@ -42,6 +42,8 @@ public class Stage_System : MonoBehaviour
 
     public bool Stage_Fail;                     //스테이지를 실패 했는가 -> 애니메이션의 중복을 방지
 
+    public GameObject PeizBlink;
+
     //Build Manager
 
 
@@ -104,9 +106,9 @@ public class Stage_System : MonoBehaviour
         
 
         BoomSpeed = 5;
-        BoomHealth = 8;
-        BoomDamage = 10;
-        BoomTime = 5;
+        BoomHealth = 0;
+        BoomDamage = 0;
+        BoomTime = 0;
         BoomPrice = 5;
 
         Enemy_Poison_Bomb_speed = 10;
@@ -163,7 +165,7 @@ public class Stage_System : MonoBehaviour
             //스포너의 스폰을 잠시 멈추고 다시 2분 대기 
             Stage_Start = false;
             stage_time = 120;
-            
+            PeizBlink.SetActive(true);
             
         }
         else if (PrintNum <= peiz2 && Stage_peiz2 == false && Stage_Start == true)
@@ -189,6 +191,7 @@ public class Stage_System : MonoBehaviour
             //스포너의 스폰을 잠시 멈추고 다시 2분 대기 
             Stage_Start = false;
             stage_time = 120;
+            PeizBlink.SetActive(true);
                 
             ItemManager.instance.AddItem(NodeType.INT_2);
             

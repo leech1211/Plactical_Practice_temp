@@ -805,6 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ea03b09da60344f9e42d22bbad7d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage_start: 0
 --- !u!114 &138256596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,6 +923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864371823045579452, guid: cbf2210a879f3904b9e795ca88b6d965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7864371823045579453, guid: cbf2210a879f3904b9e795ca88b6d965,
         type: 3}
@@ -3791,6 +3797,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864371823045579452, guid: cbf2210a879f3904b9e795ca88b6d965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7864371823045579453, guid: cbf2210a879f3904b9e795ca88b6d965,
         type: 3}
@@ -8286,6 +8297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7864371823045579452, guid: cbf2210a879f3904b9e795ca88b6d965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 7864371823045579453, guid: cbf2210a879f3904b9e795ca88b6d965,
         type: 3}
       propertyPath: SFX
@@ -9300,6 +9316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7864371823045579452, guid: cbf2210a879f3904b9e795ca88b6d965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 7864371823045579453, guid: cbf2210a879f3904b9e795ca88b6d965,
         type: 3}
       propertyPath: SFX
@@ -10053,6 +10074,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7864371823045579452, guid: cbf2210a879f3904b9e795ca88b6d965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 7864371823045579453, guid: cbf2210a879f3904b9e795ca88b6d965,
         type: 3}
       propertyPath: SFX
@@ -10536,6 +10562,7 @@ MonoBehaviour:
   Stage_peiz2: 0
   Stage_peiz3: 0
   Stage_Fail: 0
+  PeizBlink: {fileID: 138256591}
   standardUserNPC: {fileID: 1791959399832479771, guid: 8b75709133b5682488bebb46b2e2db14,
     type: 3}
 --- !u!1 &2082908380
@@ -11448,6 +11475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864371823045579452, guid: cbf2210a879f3904b9e795ca88b6d965,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 7864371823045579453, guid: cbf2210a879f3904b9e795ca88b6d965,
         type: 3}

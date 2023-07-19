@@ -31,9 +31,6 @@ public class UserNPC_Boom : MonoBehaviour
         damage = GameObject.Find("Stage_System").GetComponent<Stage_System>().BoomDamage;
         BoomTime = GameObject.Find("Stage_System").GetComponent<Stage_System>().BoomTime;
         price = GameObject.Find("Stage_System").GetComponent<Stage_System>().BoomPrice;
-        Debug.Log("공격력 " + damage);
-        Debug.Log("체력 " + health);
-        Debug.Log("폭발시간 " + BoomTime);
 
         Anim = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody>();
