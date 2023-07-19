@@ -15,11 +15,11 @@ public class Operator_Plus : Node
             return null;
         }
         
-        if (GameNetWorkManager.instance.isNodeCount)
+        /*if (GameNetWorkManager.instance.isNodeCount)
         {
             if(!GameNetWorkManager.instance.usedNodes.Contains(_nodeType))
                 GameNetWorkManager.instance.usedNodes.Add(_nodeType);
-        }
+        }*/
         
         float result = 0f, a = 0f, b = 0f;
 
