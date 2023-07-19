@@ -144,10 +144,6 @@ public class Stage_System : MonoBehaviour
         {
             //Debug.Log("페이즈 3");
             /*
-         * BoomSpeed = 5
-         * Boom체력 9
-         * Boom 공격력 10
-         * Boom 폭발시간 3
          *
          * Poison Bomb speed = 11
          * Poison Bomb 체력 8
@@ -160,8 +156,7 @@ public class Stage_System : MonoBehaviour
             Max_Spawn_Timing = 4;
             Enemy_Poison_Bomb_health += 1;
             Enemy_Poison_Bomb_damage += 1;
-            BoomHealth += 1;        
-            
+
             //스포너의 스폰을 잠시 멈추고 다시 2분 대기 
             Stage_Start = false;
             stage_time = 120;
@@ -172,10 +167,6 @@ public class Stage_System : MonoBehaviour
         {
             //Debug.Log("페이즈 2");
             /*
-         * BoomSpeed = 5
-         * Boom체력 8
-         * Boom 공격력 10
-         * Boom 폭발시간 3
          *
          * Poison Bomb speed = 11
          * Poison Bomb 체력 7
@@ -186,7 +177,6 @@ public class Stage_System : MonoBehaviour
             Min_Spawn_Timing = 4;
             Max_Spawn_Timing = 8;
             Enemy_Poison_Bomb_speed += 1;
-            BoomHealth += 2;
 
             //스포너의 스폰을 잠시 멈추고 다시 2분 대기 
             Stage_Start = false;

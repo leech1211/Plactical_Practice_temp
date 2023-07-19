@@ -428,7 +428,7 @@ MonoBehaviour:
   OUTPUT_FLOW_COUNT: 0
   isStatic: 0
   Icon: {fileID: 0}
-  PrefebPath: 
+  PrefebPath: Node/POISON_BOMB_PROPERTY
   Title: 
   Information: "POISON_BOMB\uC758 \uB2A5\uB825\uCE58 \uC870\uC815"
 --- !u!1 &1817094033469416487
