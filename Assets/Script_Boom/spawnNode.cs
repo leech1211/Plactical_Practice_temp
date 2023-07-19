@@ -56,7 +56,7 @@ public class spawnNode : MonoBehaviour
   
     void OnMouseDown()
     {
-        Debug.Log("click");
+        //Debug.Log("click");
         if (UserNPC != null)
         {
             //Debug.Log("여기는 지을 수 없다");

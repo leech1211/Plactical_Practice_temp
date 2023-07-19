@@ -30,29 +30,25 @@ public class SkillEditButton : MonoBehaviour, IPointerClickHandler      //노드
                 newField.transform.parent = ItemStorage.instance.transform;
 
                 int i = 0;
-                //foreach문 뭐지
-                //foreach문 없으면 씬 잘 전환되지만 Transform child out of bounds 오류
                 foreach (var presetNode in Preset)
                 {
-                    GameObject tempNode = Instantiate(presetNode);      //프리셋 오브젝트 생성
-                    tempNode.transform.parent = newField.transform;     //위치 잡아주기?
-                    tempNode.GetComponent<RectTransform>().anchoredPosition3D = PresetPosition[i];      //위치잡아주기?
+                    GameObject tempNode = Instantiate(presetNode);      
+                    tempNode.transform.parent = newField.transform;     
+                    tempNode.GetComponent<RectTransform>().anchoredPosition3D = PresetPosition[i];      
 
                     if (i == 0)
                     {
                         transform.parent.parent.GetComponent<Node_Skill>().propertyObject = tempNode;
-                        //Node_Skill이 생성되지 않은 건가
                     }
-                    
                     i++;
                 }
                 ItemStorage.instance.AddField(FieldName, newField);         //만든 newField를 Dictionary에 추가
             }
-            else if(Preset.Count != 0)
+            /*else if(Preset.Count != 0)
             {
                 transform.parent.parent.GetComponent<Node_Skill>().propertyObject =
                     ItemStorage.instance.GetField(FieldName).GetChild(0).gameObject;
-            }
+            }*/
 
             isInitialize = true;
         }

@@ -20304,6 +20304,8 @@ MonoBehaviour:
   button: {fileID: 7547149759427728248}
   text: {fileID: 7547149759621005792}
   icon: {fileID: 454780052}
+  Boom_Property: {fileID: 1817094033014473630, guid: dfbae8a312588a144aeae4a583b414cd,
+    type: 3}
 --- !u!1 &7547149759621005726
 GameObject:
   m_ObjectHideFlags: 0

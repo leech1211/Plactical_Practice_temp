@@ -12,11 +12,11 @@ public class Number_2 : Node
             return null;
         }
         
-        if (GameNetWorkManager.instance.isNodeCount)
+        /*if (GameNetWorkManager.instance.isNodeCount)
         {
             if(!GameNetWorkManager.instance.usedNodes.Contains(_nodeType))
                 GameNetWorkManager.instance.usedNodes.Add(_nodeType);
-        }
+        }*/
         
         return 2f;
     }

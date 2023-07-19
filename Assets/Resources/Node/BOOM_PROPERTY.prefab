@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1817094033014473626}
   - component: {fileID: 1817094033014473627}
   - component: {fileID: 7791338201316028628}
-  - component: {fileID: 6628836200797508660}
+  - component: {fileID: 4236345085508929837}
   m_Layer: 5
   m_Name: BOOM_PROPERTY
   m_TagString: Node
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &6628836200797508660
+--- !u!114 &4236345085508929837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1817094033014473630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7349c64e22db451284e2e41d6780e462, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ffe2fe0c7e7c6746af98276b1888996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NODE_TYPE: BOOM_PROPERTY
@@ -428,7 +428,7 @@ MonoBehaviour:
   OUTPUT_FLOW_COUNT: 0
   isStatic: 0
   Icon: {fileID: 0}
-  PrefebPath: 
+  PrefebPath: Node/BOOM_PROPERTY
   Title: 
   Information: "BOOM\uC758 \uB2A5\uB825\uCE58 \uC870\uC815"
 --- !u!1 &1817094033469416487

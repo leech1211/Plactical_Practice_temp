@@ -106,7 +106,7 @@ public class Stage_System : MonoBehaviour
         BoomSpeed = 5;
         BoomHealth = 8;
         BoomDamage = 10;
-        BoomTime = 3;
+        BoomTime = 5;
         BoomPrice = 5;
 
         Enemy_Poison_Bomb_speed = 10;
@@ -211,14 +211,14 @@ public class Stage_System : MonoBehaviour
         {
             yield return null;
         }
-        ItemManager.instance.AddItem(NodeType.INT_1);
-        ItemManager.instance.AddItem(NodeType.INT_1);
-        ItemManager.instance.AddItem(NodeType.INT_2);
-        ItemManager.instance.AddItem(NodeType.INT_2);
-        ItemManager.instance.AddItem(NodeType.INT_3);
-        ItemManager.instance.AddItem(NodeType.INT_3);
-        ItemManager.instance.AddItem(NodeType.OPERATOR_PLUS_INT);
-        ItemManager.instance.AddItem(NodeType.OPERATOR_PLUS_INT);
+        ItemManager.instance.AddItem(NodeType.FLOAT_1);
+        ItemManager.instance.AddItem(NodeType.FLOAT_1);
+        ItemManager.instance.AddItem(NodeType.FLOAT_2);
+        ItemManager.instance.AddItem(NodeType.FLOAT_2);
+        ItemManager.instance.AddItem(NodeType.FLOAT_3);
+        ItemManager.instance.AddItem(NodeType.FLOAT_3);
+        ItemManager.instance.AddItem(NodeType.OPERATOR_PLUS);
+        ItemManager.instance.AddItem(NodeType.OPERATOR_PLUS);
     }
 
 }

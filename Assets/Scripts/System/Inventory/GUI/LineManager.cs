@@ -200,6 +200,8 @@ public class LineManager : MonoBehaviour, IDragHandler, IPointerEnterHandler, IP
         
         Node connectNode = connectTransform.parent.GetComponentInParent<Node>();
         int connectInputIndex = connectTransform.transform.GetSiblingIndex();
+        //Debug.Log("connectInputIndex : " + connectInputIndex);
+        //Debug.Log("connectNode.inputButton.Length : " + connectNode.inputButton.Length);
         if (connectNode.inputButton[connectInputIndex] != null)
         {
             connectNode.inputButton[connectInputIndex].GetComponent<LineManager>().DisconnectLine(connectTransform.gameObject);

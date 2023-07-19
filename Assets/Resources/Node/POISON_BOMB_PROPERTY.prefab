@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1817094033014473626}
   - component: {fileID: 1817094033014473627}
   - component: {fileID: 7791338201316028628}
-  - component: {fileID: 997662549656865012}
+  - component: {fileID: 7923193306808986609}
   m_Layer: 5
   m_Name: POISON_BOMB_PROPERTY
   m_TagString: Node
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
---- !u!114 &997662549656865012
+--- !u!114 &7923193306808986609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1817094033014473630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7349c64e22db451284e2e41d6780e462, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ffe2fe0c7e7c6746af98276b1888996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NODE_TYPE: POISON_BOMB_PROPERTY
